@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float forceAmount;
     public Rigidbody2D rb;
     public float JumpAmount;
+    public Animator anmim; 
     // Use this for initialization
     void Start()
     {
@@ -30,11 +31,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(new Vector2(forceAmount, 0));
+
         }
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector2(-forceAmount, 0));
+
         }
 
+        anmim.SetFloat("Speed", rb.velocity.x);
     }
 }

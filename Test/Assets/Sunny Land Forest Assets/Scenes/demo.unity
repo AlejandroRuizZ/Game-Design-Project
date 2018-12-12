@@ -13475,6 +13475,7 @@ MonoBehaviour:
   forceAmount: 1
   rb: {fileID: 797481770}
   JumpAmount: 15
+  anmim: {fileID: 797481776}
 --- !u!70 &797481775
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

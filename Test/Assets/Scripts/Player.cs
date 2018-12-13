@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     public Animator anim1;
     public Animator anim2;
+    public bool checkground = true;
 
     private bool attack;
 
@@ -68,12 +69,12 @@ public class Player : MonoBehaviour
     }
 
     void Flip()
-    { 
-    facingRight = !facingRight;
+    {
+        facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-        }   
+    }
     void CheckIfOnGround()
     {
         ContactFilter2D filter = new ContactFilter2D();
@@ -89,41 +90,57 @@ public class Player : MonoBehaviour
     }
     void SimpleJump()
     {
-        if (isStandingOnGround && Input.GetButtonDown("Jump"))
+        Debug.Log("JUmp is called");
+        if (checkground)
         {
-            rb.velocity = new Vector2(0, simpleJumpForce);
-        }
-        if (Input.GetButtonDown("Jump"))
+            if (/*isStandingOnGround &&*/ Input.GetKeyDown(KeyCode.Space))
             {
-            anim1.SetBool("IsJumping", true);
-        }
-        else
-        {
-            if (isStandingOnGround)
-                anim1.SetBool("IsJumping", false);
-
-        }
-    }
-
-        private void Attacks ()
-        {
-        if (attack)
-            anim2.SetTrigger("Attack");
-        }
-
-        private void HandleImput ()
-        {
-            if (Input.GetKeyDown(KeyCode.F))
+                Debug.Log("input recieved");
+                rb.velocity = new Vector2(0, simpleJumpForce);
+            }
+            if (Input.GetButtonDown("Jump"))
             {
-                attack = true; 
+                anim1.SetBool("IsJumping", true);
+                anim1.SetTrigger("jump");
+                checkground = false;
+                StartCoroutine(jumpcooldown());
+                Debug.Log("jump");
+            }
+            else
+            {
+                if (isStandingOnGround)
+                    anim1.SetBool("IsJumping", false);
+
             }
         }
-    private void ResetValues ()
+
+    }
+
+    private void Attacks()
+    {
+        if (attack)
+            anim2.SetTrigger("Attack");
+    }
+
+    private void HandleImput()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            attack = true;
+        }
+    }
+    private void ResetValues()
     {
         if (Input.GetKeyUp(KeyCode.F))
         {
             attack = false;
         }
+    }
+
+    IEnumerator jumpcooldown()
+    {
+    yield return new WaitForSeconds(.2f);
+    checkground = true;
     }
 
 }

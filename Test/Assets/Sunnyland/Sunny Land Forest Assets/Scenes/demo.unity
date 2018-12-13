@@ -11377,7 +11377,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4, y: 3.93}
+    oldSize: {x: 0.43636364, y: 0.46545455}
     newSize: {x: 3.84, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11460,7 +11460,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 797481776}
+  anim1: {fileID: 797481776}
+  anim2: {fileID: 797481776}
   maxGroundSpeed: 500
   maxAirSpeed: 400
   groundCheck: {fileID: 897166034}

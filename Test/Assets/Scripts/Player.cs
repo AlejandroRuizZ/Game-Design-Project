@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
+    public Animator anim1;
+    public Animator anim2;
+
+    private bool attack;
 
     [Header("Speed Settings")]
     public float maxGroundSpeed;
@@ -29,15 +33,21 @@ public class Player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         SimpleJump();
+        HandleImput();
+
     }
 
     void FixedUpdate()
     {
         RunningMovement();
+        Attacks();
+        ResetValues();
     }
     void LateUpdate()
     {
@@ -73,6 +83,39 @@ public class Player : MonoBehaviour
     void SimpleJump()
     {
         if (isStandingOnGround && Input.GetButtonDown("Jump"))
+        {
             rb.velocity = new Vector2(0, simpleJumpForce);
+
+        }
+        if (Input.GetButtonDown("Jump"))
+            anim1.SetBool("IsJumping", true);
+        else
+        {
+            if (isStandingOnGround)
+                anim1.SetBool("IsJumping", false);
+
+        }
     }
+
+        private void Attacks ()
+        {
+        if (attack)
+            anim2.SetTrigger("Attack");
+        }
+
+        private void HandleImput ()
+        {
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                attack = true; 
+            }
+        }
+    private void ResetValues ()
+    {
+        if (Input.GetKeyUp(KeyCode.N))
+        {
+            attack = false;
+        }
+    }
+
 }

@@ -63,10 +63,17 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(speedMove, rb.velocity.y);
 
         anim.SetFloat("Speed", rb.velocity.x);
+        if ((move > 0 && !facingRight) || (move < 0 && facingRight))
+            Flip();
     }
-    
 
-
+    void Flip()
+    { 
+    facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+        }   
     void CheckIfOnGround()
     {
         ContactFilter2D filter = new ContactFilter2D();
@@ -85,10 +92,8 @@ public class Player : MonoBehaviour
         if (isStandingOnGround && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(0, simpleJumpForce);
-
-        }
-        if (Input.GetButtonDown("Jump"))
             anim1.SetBool("IsJumping", true);
+        }
         else
         {
             if (isStandingOnGround)
@@ -105,7 +110,7 @@ public class Player : MonoBehaviour
 
         private void HandleImput ()
         {
-            if (Input.GetKeyDown(KeyCode.N))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 attack = true; 
             }

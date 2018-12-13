@@ -10753,6 +10753,7 @@ GameObject:
   - component: {fileID: 520703862}
   - component: {fileID: 520703861}
   - component: {fileID: 520703863}
+  - component: {fileID: 520703864}
   m_Layer: 0
   m_Name: Dummy 3
   m_TagString: Untagged
@@ -10828,12 +10829,24 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.96, y: 3.2399998}
   m_Direction: 0
+--- !u!114 &520703864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520703860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad0c78ec7ac14aa2787d014a9c9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dummy: {fileID: 0}
 --- !u!1 &524215237
 GameObject:
   m_ObjectHideFlags: 0
@@ -11185,6 +11198,7 @@ GameObject:
   - component: {fileID: 747484568}
   - component: {fileID: 747484567}
   - component: {fileID: 747484569}
+  - component: {fileID: 747484570}
   m_Layer: 0
   m_Name: Dummy 1
   m_TagString: Untagged
@@ -11260,12 +11274,24 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.96, y: 3.2399998}
   m_Direction: 0
+--- !u!114 &747484570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747484566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad0c78ec7ac14aa2787d014a9c9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dummy: {fileID: 747484566}
 --- !u!1 &774453745
 GameObject:
   m_ObjectHideFlags: 0
@@ -11275,6 +11301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774453746}
   - component: {fileID: 774453747}
+  - component: {fileID: 774453748}
   m_Layer: 0
   m_Name: Sword Attack
   m_TagString: Untagged
@@ -11320,6 +11347,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17862833, y: 0.4677539}
   m_EdgeRadius: 0
+--- !u!114 &774453748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774453745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12243f2e13cd8bf498e3278a4297633e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 20
 --- !u!1 &797481769
 GameObject:
   m_ObjectHideFlags: 0
@@ -11334,6 +11373,7 @@ GameObject:
   - component: {fileID: 797481775}
   - component: {fileID: 797481776}
   - component: {fileID: 797481774}
+  - component: {fileID: 797481777}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11506,6 +11546,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &797481777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797481769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a425d8be16a68b4382f2f059169bae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTrigger: {fileID: 774453747}
+  e: 0
 --- !u!1 &810580916
 GameObject:
   m_ObjectHideFlags: 0
@@ -11516,6 +11569,7 @@ GameObject:
   - component: {fileID: 810580918}
   - component: {fileID: 810580917}
   - component: {fileID: 810580919}
+  - component: {fileID: 810580920}
   m_Layer: 0
   m_Name: Dummy 2
   m_TagString: Untagged
@@ -11591,12 +11645,24 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.96, y: 3.2399998}
   m_Direction: 0
+--- !u!114 &810580920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810580916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad0c78ec7ac14aa2787d014a9c9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dummy: {fileID: 0}
 --- !u!1 &838222978
 GameObject:
   m_ObjectHideFlags: 0

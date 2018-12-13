@@ -52,7 +52,11 @@ public class Player : MonoBehaviour
         float speedMove = move * maxSpeed * Time.fixedDeltaTime;
         rb.velocity = new Vector2(speedMove, rb.velocity.y);
 
+        anim.SetFloat("Speed", rb.velocity.x);
     }
+    
+
+
     void CheckIfOnGround()
     {
         ContactFilter2D filter = new ContactFilter2D();

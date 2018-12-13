@@ -92,6 +92,9 @@ public class Player : MonoBehaviour
         if (isStandingOnGround && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(0, simpleJumpForce);
+        }
+        if (Input.GetButtonDown("Jump"))
+            {
             anim1.SetBool("IsJumping", true);
         }
         else
@@ -117,7 +120,7 @@ public class Player : MonoBehaviour
         }
     private void ResetValues ()
     {
-        if (Input.GetKeyUp(KeyCode.N))
+        if (Input.GetKeyUp(KeyCode.F))
         {
             attack = false;
         }

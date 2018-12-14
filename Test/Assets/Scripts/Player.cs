@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         Debug.Log("JUmp is called");
         if (checkground)
         {
-            if (/*isStandingOnGround &&*/ Input.GetKeyDown(KeyCode.Space))
+            if (isStandingOnGround && Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("input recieved");
                 rb.velocity = new Vector2(0, simpleJumpForce);
